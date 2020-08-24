@@ -39,4 +39,7 @@ dependencies {
     implementation deps.dagger.core
     kapt deps.dagger.compiler
 
+    //modules
+    implementation project(":githubapi")
+
 }

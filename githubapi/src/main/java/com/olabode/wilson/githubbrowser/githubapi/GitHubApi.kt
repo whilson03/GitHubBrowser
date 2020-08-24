@@ -2,6 +2,8 @@ package com.olabode.wilson.githubbrowser.githubapi
 
 import com.olabode.wilson.githubbrowser.githubapi.model.RepoApiModel
 import com.olabode.wilson.githubbrowser.githubapi.model.UserApiModel
+import javax.inject.Inject
+import javax.inject.Singleton
 
 /**
  *   Created by OLABODE WILSON on 8/24/20.
@@ -11,8 +13,8 @@ interface GitHubApi {
     fun getTopRepositories(): List<RepoApiModel>
 }
 
-
-class MockGitHubApi : GitHubApi {
+@Singleton
+class MockGitHubApi @Inject constructor() : GitHubApi {
     override fun getTopRepositories(): List<RepoApiModel> {
         return listOf(
             RepoApiModel(
