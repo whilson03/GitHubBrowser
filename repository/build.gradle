@@ -39,4 +39,7 @@ dependencies {
     //modules
     implementation project(":githubapi")
 
+    //tests
+    testImplementation deps.truth
+
 }
