@@ -2,6 +2,7 @@ package com.olabode.wilson.githubbrowser.application
 
 import android.content.Context
 import com.olabode.wilson.githubbrowser.githubapi.GitHubApiModule
+import com.olabode.wilson.githubbrowser.repository.AppRepository
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
@@ -13,6 +14,8 @@ import javax.inject.Singleton
 @Singleton
 @Component(modules = [GitHubApiModule::class])
 interface ApplicationComponent {
+
+    fun appRepository(): AppRepository
 
     @Component.Factory
     interface Factory {

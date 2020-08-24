@@ -41,5 +41,6 @@ dependencies {
 
     //modules
     implementation project(":githubapi")
+    implementation project(":repository")
 
 }
