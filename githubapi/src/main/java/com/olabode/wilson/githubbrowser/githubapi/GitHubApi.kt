@@ -10,68 +10,70 @@ import javax.inject.Singleton
  */
 interface GitHubApi {
 
-    suspend fun getTopRepositories(): List<RepoApiModel>
+    suspend fun getTopRepositories(): TopRepoSearchResult
 }
 
 @Singleton
 class MockGitHubApi @Inject constructor() : GitHubApi {
-    override suspend fun getTopRepositories(): List<RepoApiModel> {
-        return listOf(
-            RepoApiModel(
-                id = 1L,
-                name = "Android Cli",
-                description = "A good framework",
-                owner = UserApiModel(1L, login = "whilson"),
-                stargazersCount = 50,
-                forksCount = 4,
-                contributorsUrl = "www.",
-                createdDate = "1/3/2020",
-                updatedDate = "1/3/2020"
-            ),
-            RepoApiModel(
-                id = 1L,
-                name = "Android Cli",
-                description = "A good framework",
-                owner = UserApiModel(1L, login = "whilson"),
-                stargazersCount = 50,
-                forksCount = 4,
-                contributorsUrl = "www.",
-                createdDate = "1/3/2020",
-                updatedDate = "1/3/2020"
-            ),
+    override suspend fun getTopRepositories(): TopRepoSearchResult {
+        return TopRepoSearchResult(
+            listOf(
+                RepoApiModel(
+                    id = 1L,
+                    name = "Android Cli",
+                    description = "A good framework",
+                    owner = UserApiModel(1L, login = "whilson"),
+                    stargazersCount = 50,
+                    forksCount = 4,
+                    contributorsUrl = "www.",
+                    createdDate = "1/3/2020",
+                    updatedDate = "1/3/2020"
+                ),
+                RepoApiModel(
+                    id = 1L,
+                    name = "Android Cli",
+                    description = "A good framework",
+                    owner = UserApiModel(1L, login = "whilson"),
+                    stargazersCount = 50,
+                    forksCount = 4,
+                    contributorsUrl = "www.",
+                    createdDate = "1/3/2020",
+                    updatedDate = "1/3/2020"
+                ),
 
-            RepoApiModel(
-                id = 1L,
-                name = "Android Cli",
-                description = "A good framework",
-                owner = UserApiModel(1L, login = "whilson"),
-                stargazersCount = 50,
-                forksCount = 4,
-                contributorsUrl = "www.",
-                createdDate = "1/3/2020",
-                updatedDate = "1/3/2020"
-            ),
-            RepoApiModel(
-                id = 1L,
-                name = "Android Cli",
-                description = "A good framework",
-                owner = UserApiModel(1L, login = "whilson"),
-                stargazersCount = 50,
-                forksCount = 4,
-                contributorsUrl = "www.",
-                createdDate = "1/3/2020",
-                updatedDate = "1/3/2020"
-            ),
-            RepoApiModel(
-                id = 1L,
-                name = "Android Cli",
-                description = "A good framework",
-                owner = UserApiModel(1L, login = "whilson"),
-                stargazersCount = 50,
-                forksCount = 4,
-                contributorsUrl = "www.",
-                createdDate = "1/3/2020",
-                updatedDate = "1/3/2020"
+                RepoApiModel(
+                    id = 1L,
+                    name = "Android Cli",
+                    description = "A good framework",
+                    owner = UserApiModel(1L, login = "whilson"),
+                    stargazersCount = 50,
+                    forksCount = 4,
+                    contributorsUrl = "www.",
+                    createdDate = "1/3/2020",
+                    updatedDate = "1/3/2020"
+                ),
+                RepoApiModel(
+                    id = 1L,
+                    name = "Android Cli",
+                    description = "A good framework",
+                    owner = UserApiModel(1L, login = "whilson"),
+                    stargazersCount = 50,
+                    forksCount = 4,
+                    contributorsUrl = "www.",
+                    createdDate = "1/3/2020",
+                    updatedDate = "1/3/2020"
+                ),
+                RepoApiModel(
+                    id = 1L,
+                    name = "Android Cli",
+                    description = "A good framework",
+                    owner = UserApiModel(1L, login = "whilson"),
+                    stargazersCount = 50,
+                    forksCount = 4,
+                    contributorsUrl = "www.",
+                    createdDate = "1/3/2020",
+                    updatedDate = "1/3/2020"
+                )
             )
         )
     }

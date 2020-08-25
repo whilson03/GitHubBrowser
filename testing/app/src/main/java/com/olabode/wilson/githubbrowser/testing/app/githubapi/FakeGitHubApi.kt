@@ -1,6 +1,7 @@
 package com.olabode.wilson.githubbrowser.testing.app.githubapi
 
 import com.olabode.wilson.githubbrowser.githubapi.GitHubApi
+import com.olabode.wilson.githubbrowser.githubapi.TopRepoSearchResult
 import com.olabode.wilson.githubbrowser.githubapi.model.RepoApiModel
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -13,7 +14,7 @@ import javax.inject.Singleton
 class FakeGitHubApi @Inject constructor() : GitHubApi {
     var repos = listOf<RepoApiModel>()
 
-    override suspend fun getTopRepositories(): List<RepoApiModel> {
-        return repos
+    override suspend fun getTopRepositories(): TopRepoSearchResult {
+        return TopRepoSearchResult(repos)
     }
 }

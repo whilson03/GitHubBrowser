@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion versions.compileSdk
@@ -35,6 +36,13 @@ dependencies {
 
     // Dagger
     implementation deps.dagger.core
+
+    api deps.retrofit.moshi
+    implementation deps.retrofit.moshi
+
+    api deps.moshi.core
+    kapt deps.moshi.kotlin
+
 
 
 }
