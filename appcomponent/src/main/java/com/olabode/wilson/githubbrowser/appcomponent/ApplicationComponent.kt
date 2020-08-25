@@ -1,4 +1,4 @@
-package com.olabode.wilson.githubbrowser.application
+package com.olabode.wilson.githubbrowser.appcomponent
 
 import android.content.Context
 import com.olabode.wilson.githubbrowser.appdeps.ApplicationDeps

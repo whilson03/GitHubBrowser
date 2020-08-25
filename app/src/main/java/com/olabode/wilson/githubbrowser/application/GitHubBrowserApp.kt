@@ -1,6 +1,7 @@
 package com.olabode.wilson.githubbrowser.application
 
 import android.app.Application
+import com.olabode.wilson.githubbrowser.appcomponent.DaggerApplicationComponent
 import com.olabode.wilson.githubbrowser.appdeps.ApplicationDeps
 import com.olabode.wilson.githubbrowser.appdeps.HasApplicationDeps
 
