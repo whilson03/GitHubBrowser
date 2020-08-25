@@ -6,6 +6,6 @@ package com.olabode.wilson.githubbrowser.home.model
 data class RepoItem(
     val name: String,
     val description: String,
-    val starsCount: String,
-    val forksCount: String
+    val starsCount: Int,
+    val forksCount: Int
 )

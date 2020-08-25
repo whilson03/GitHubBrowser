@@ -28,8 +28,8 @@ class HomeRepoAdapter : RecyclerView.Adapter<HomeRepoAdapter.RepoItemViewHolder>
             with(repoItem) {
                 binding.repoName.text = name
                 binding.description.text = description
-                binding.stars.text = starsCount
-                binding.forks.text = forksCount
+                binding.stars.text = "$starsCount"
+                binding.forks.text = "$forksCount"
             }
         }
     }

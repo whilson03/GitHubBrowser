@@ -3,6 +3,7 @@ package com.olabode.wilson.githubbrowser.home
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.olabode.wilson.githubbrowser.di.scope.ScreenScope
 import com.olabode.wilson.githubbrowser.home.model.RepoItem
 import com.olabode.wilson.githubbrowser.repository.AppRepository
 import javax.inject.Inject
@@ -10,6 +11,8 @@ import javax.inject.Inject
 /**
  *   Created by OLABODE WILSON on 8/25/20.
  */
+
+@ScreenScope
 class HomeViewModel @Inject constructor(
     private val repository: AppRepository
 ) : ViewModel() {

@@ -47,5 +47,7 @@ dependencies {
     implementation project(":appdeps")
     implementation deps.dagger.core
     kapt deps.dagger.compiler
+    testImplementation deps.androidx.archtesting
+    testImplementation deps.truth
 
 }
