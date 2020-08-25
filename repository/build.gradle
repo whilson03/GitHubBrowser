@@ -37,7 +37,7 @@ dependencies {
     implementation deps.dagger.core
 
     //modules
-    implementation project(":githubapi")
+    api project(":githubapi")
 
     //tests
     testImplementation deps.truth
