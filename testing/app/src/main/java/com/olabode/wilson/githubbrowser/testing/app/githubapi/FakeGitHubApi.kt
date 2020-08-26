@@ -13,20 +13,24 @@ import javax.inject.Singleton
 
 @Singleton
 class FakeGitHubApi @Inject constructor() : GitHubApi {
-    var repos = listOf<RepoApiModel>()
+
+    var topRepos = listOf<RepoApiModel>()
+    var singleRepoResult: RepoApiModel? = null
+    var contributorsResult = listOf<ContributorApiModel>()
+
 
     override suspend fun getTopRepositories(): TopRepoSearchResult {
-        return TopRepoSearchResult(repos)
+        return TopRepoSearchResult(topRepos)
     }
 
     override suspend fun getRepo(repoOwner: String, repoName: String): RepoApiModel {
-        TODO("Not yet implemented")
+        return singleRepoResult ?: throw  NullPointerException("Single Result was not set")
     }
 
     override suspend fun getContributors(
         repoOwner: String,
         repoName: String
     ): List<ContributorApiModel> {
-        TODO("Not yet implemented")
+        return contributorsResult
     }
 }

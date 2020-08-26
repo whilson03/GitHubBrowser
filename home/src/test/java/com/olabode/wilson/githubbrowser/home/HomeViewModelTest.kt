@@ -28,7 +28,7 @@ class HomeViewModelTest {
     fun setUp() {
         Dispatchers.setMain(Dispatchers.Unconfined)
         val appRepository = AppRepository(FakeGitHubApi().apply {
-            repos = listOf(fakeRepoApiModel)
+            topRepos = listOf(fakeRepoApiModel)
         })
         viewModel = HomeViewModel(appRepository)
         viewStateValues = mutableListOf()
