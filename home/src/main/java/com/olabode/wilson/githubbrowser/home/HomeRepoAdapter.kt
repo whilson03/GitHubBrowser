@@ -11,7 +11,9 @@ import com.olabode.wilson.githubbrowser.home.model.RepoItem
  */
 
 
-class HomeRepoAdapter : RecyclerView.Adapter<HomeRepoAdapter.RepoItemViewHolder>() {
+class HomeRepoAdapter(
+    private val onRepoSelected: (repoOwner: String, repoName: String) -> Unit
+) : RecyclerView.Adapter<HomeRepoAdapter.RepoItemViewHolder>() {
 
     private val data: MutableList<RepoItem> = mutableListOf()
 
@@ -21,10 +23,24 @@ class HomeRepoAdapter : RecyclerView.Adapter<HomeRepoAdapter.RepoItemViewHolder>
         notifyDataSetChanged()
     }
 
-    class RepoItemViewHolder(private val binding: RepoItemBinding) :
+    class RepoItemViewHolder(
+        private val binding: RepoItemBinding,
+        onRepoSelected: (repoOwner: String, repoName: String) -> Unit
+    ) :
         RecyclerView.ViewHolder(binding.root) {
 
+        private var repoItem: RepoItem? = null
+
+        init {
+            itemView.setOnClickListener {
+                repoItem?.let { repo ->
+                    onRepoSelected(repo.ownerName, repo.name)
+                }
+            }
+        }
+
         fun bind(repoItem: RepoItem) {
+            this.repoItem = repoItem
             with(repoItem) {
                 binding.repoName.text = name
                 binding.description.text = description
@@ -40,7 +56,7 @@ class HomeRepoAdapter : RecyclerView.Adapter<HomeRepoAdapter.RepoItemViewHolder>
             parent,
             false
         )
-        return RepoItemViewHolder(binding)
+        return RepoItemViewHolder(binding, onRepoSelected)
 
     }
 

@@ -4,6 +4,7 @@ package com.olabode.wilson.githubbrowser.home.model
  *   Created by OLABODE WILSON on 8/24/20.
  */
 data class RepoItem(
+    val ownerName: String,
     val name: String,
     val description: String,
     val starsCount: Int,

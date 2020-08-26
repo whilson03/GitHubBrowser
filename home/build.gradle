@@ -59,6 +59,7 @@ dependencies {
    implementation deps.coroutines.android
 
     implementation project(":repository")
+    implementation project(":navigation")
     implementation project(":di")
     implementation project(":appdeps")
     implementation deps.dagger.core
