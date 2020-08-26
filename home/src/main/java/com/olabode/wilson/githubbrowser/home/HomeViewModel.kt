@@ -29,7 +29,7 @@ class HomeViewModel @Inject constructor(
                 repos = topRepos.map {
                     RepoItem(
                         name = it.name,
-                        description = it.description,
+                        description = it.description ?: "",
                         starsCount = it.stargazersCount,
                         forksCount = it.forksCount
                     )
