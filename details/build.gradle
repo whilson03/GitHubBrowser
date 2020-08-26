@@ -26,6 +26,10 @@ android {
     buildFeatures {
         viewBinding true
     }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
 }
 
 dependencies {
@@ -48,5 +52,7 @@ dependencies {
 
     implementation deps.dagger.core
     kapt deps.dagger.compiler
+
+    implementation deps.coil
 
 }
