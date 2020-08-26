@@ -56,7 +56,7 @@ dependencies {
     implementation deps.androidx.viewmodel
     implementation deps.androidx.fragment
 
-//    implementation deps.coroutines.android
+   implementation deps.coroutines.android
 
     implementation project(":repository")
     implementation project(":di")
